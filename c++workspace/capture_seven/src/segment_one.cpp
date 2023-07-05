@@ -1,4 +1,5 @@
 #include "student.h"
+#include "age_manager.h"
 #include<vector>
 #include<list>
 using namespace std;
@@ -28,9 +29,9 @@ vector<Student> read_student(){
 
 int main(){
     vector<Student> ll = read_student();
-    const Student c_s = ll[0];
-    set_student_name(c_s,"zhangxing");
-
-    c_s.print_info();
+    set_student_name(ll[0],"zhangxing");
+    ll[0].print_info();
+    age_manager man;
+    man.modify_age(ll[0]).print_info();
     return 0;
 }
